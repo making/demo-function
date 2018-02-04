@@ -16,9 +16,15 @@ public class DemoFunctionApplicationTests {
     TestRestTemplate restTemplate;
 
     @Test
-    public void contextLoads() {
+    public void testGreeter() {
         String res = restTemplate.postForObject("/greeter", "World", String.class);
         assertThat(res).isEqualTo("Hello World");
+    }
+
+    @Test
+    public void testFizzBuzz() {
+        String res = restTemplate.postForObject("/fizzBuzz", "15", String.class);
+        assertThat(res).isEqualTo("FizzBuzz");
     }
 
 }
